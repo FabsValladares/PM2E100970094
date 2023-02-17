@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F4F4"
+    android:backgroundTint="#C5EBFE"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btnvercontactos"
+        android:layout_width="316dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="#B49FDC"
+        android:text="Contactos Salvados"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notas" />
+
+    <Button
+        android:id="@+id/btnsalvar"
+        android:layout_width="316dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="#B49FDC"
+        android:text="Salvar Contacto"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notas" />
+
+    <TextView
+        android:id="@+id/txtnotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="sans-serif-medium"
+        android:foregroundTint="#000000"
+        android:text="Notas:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefono"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <EditText
+        android:id="@+id/telefono"
+        android:layout_width="375dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="5dp"
+        android:background="#F8F4F4"
+        android:backgroundTint="#F8F4F4"
+        android:ems="16"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:hint="Ingrese su Telefono"
+        android:inputType="phone"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombres" />
+
+    <EditText
+        android:id="@+id/nombres"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:background="#FAFBFB"
+        android:backgroundTint="#F8F8F8"
+        android:ems="16"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:hint="Ingrese Su Nombre"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="374dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="15dp"
+        android:background="#FAFBFB"
+        android:backgroundTint="#FAFBFB"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="415dp"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="209dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:srcCompat="@drawable/acceso" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="102dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#C5EBFE"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.527"
+        app:srcCompat="@drawable/mas" />
+
+    <TextView
+        android:id="@+id/txtpais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="sans-serif-medium"
+        android:foregroundTint="#000000"
+        android:text="Pais:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.44" />
+
+
+    <EditText
+        android:id="@+id/notas"
+        android:layout_width="375dp"
+        android:layout_height="106dp"
+        android:background="#C5EBFE"
+        android:backgroundTint="#FDFDFD"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/txtnotas"
+        tools:layout_editor_absoluteX="41dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
