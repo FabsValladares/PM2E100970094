@@ -9,8 +9,11 @@ import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,37 +21,50 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.pm2e100970094.configuracion.SQLiteConexion;
+import com.example.pm2e100970094.transacciones.Transacciones;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    SQLiteConexion conexion = new SQLiteConexion(this, Transacciones.NameDatabase,null,1);
+    SQLiteDatabase db;
+    EditText nombre, telefono, nota;
     Spinner spninner;
     Button btnver;
-
+    Bitmap imagen;
     static final  int REQUEST_IMAGE = 101;
     static final  int PETICION_ACCESS_CAM = 201;
+
+    static final int PETICION_ACCESO_CAM = 100;
+    static final int TAKE_PIC_REQUEST = 101;
 
     ImageView imageView;
     ImageButton btntakefoto;
     String currentPhotoPath;
+    int codigoPaisSeleccionado;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        nombre= (EditText) findViewById(R.id.nombres);
+        telefono = (EditText) findViewById(R.id.telefono);
+        nota = (EditText) findViewById(R.id.notas);
         imageView = (ImageView) findViewById(R.id.imageView);
         btntakefoto = (ImageButton) findViewById(R.id.takepicture);
 
+        Button btnsalvar= (Button) findViewById(R.id.btnsalvar);
 
         spninner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -72,9 +88,77 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnsalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    validarDatos();
+            }
+        });
 
 
     }
+
+    private void validarDatos() {
+         if (nombre.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "Debe de escribir un nombre" ,Toast.LENGTH_LONG).show();
+        }else if (telefono.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "Debe de escribir un telefono" ,Toast.LENGTH_LONG).show();
+        }else if (nota.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "Debe de escribir una nota" ,Toast.LENGTH_LONG).show();
+        }else {
+             salvarContacto();
+         }
+    }
+    private void salvarContacto() {
+try {
+        SQLiteConexion conexion = new SQLiteConexion(this, Transacciones.NameDatabase, null, 1);
+        SQLiteDatabase db = conexion.getWritableDatabase();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+       // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byte[] ArrayImagen  = stream.toByteArray();
+
+        ContentValues valores = new ContentValues();
+
+        String Pais = spninner.getSelectedItem().toString();
+        String PaisText = Pais.substring(0, Pais.length() - 6);
+        String PaisNumber = Pais.substring(Pais.length() - 4, Pais.length() - 1);
+
+        valores.put(Transacciones.pais, PaisText);
+        valores.put(Transacciones.nombre, nombre.getText().toString());
+        valores.put(Transacciones.telefono, PaisNumber + telefono.getText().toString());
+        valores.put(Transacciones.nota, nota.getText().toString());
+        //valores.put(String.valueOf(Transacciones.imagen),ArrayImagen);
+
+
+
+        Long resultado = db.insert(Transacciones.tablacontactos, Transacciones.id, valores);
+
+        Toast.makeText(getApplicationContext(), "Registro ingreso con exito, Codigo " + resultado.toString()
+                ,Toast.LENGTH_LONG).show();
+
+        db.close();
+    } catch (Exception ex) {
+        Toast.makeText(getApplicationContext(),"Se produjo un error",Toast.LENGTH_LONG).show();
+    }
+
+        ClearScreen();
+    }
+    private void ClearScreen() {
+        spninner.setSelection(0);
+        nombre.setText("");
+        telefono.setText("");
+        nota.setText("");;
+    }
+
+
+
+
+
+
+
+
+
+
 
     private void permisos()
     {

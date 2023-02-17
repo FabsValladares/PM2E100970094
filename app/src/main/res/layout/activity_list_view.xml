@@ -22,37 +22,45 @@
 
 
     <ListView
-        android:id="@+id/listview"
-        android:layout_width="407dp"
-        android:layout_height="459dp"
+        android:id="@+id/txtlista"
+        android:layout_width="401dp"
+        android:layout_height="396dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="150dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_atras"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtbuscar" />
 
     <Button
         android:id="@+id/btn_compartir"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#9580BD"
         android:text="Compartir Contacto"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_img"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#9580BD"
+        android:text="Ver Imagen"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_compartir" />
 
     <Button
         android:id="@+id/btn_eliminar"
@@ -72,6 +80,21 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
+        android:id="@+id/btn_llamar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#9580BD"
+        android:text="LLamar Contacto"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btn_actualizar"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
@@ -87,22 +110,22 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_img"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/btn_img"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+    <EditText
+        android:id="@+id/txtbuscar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#9580BD"
-        android:text="Ver Imagen"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:ems="10"
+        android:hint="Buscar"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtlista"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_compartir"
-        app:layout_constraintTop_toBottomOf="@+id/listview"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_atras"
+        app:layout_constraintVertical_bias="0.173" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

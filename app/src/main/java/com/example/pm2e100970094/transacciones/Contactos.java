@@ -9,7 +9,7 @@ public class Contactos {
     private String telefono;
     private String nota;
     private Blob imagen;
-
+    public Contactos(){}
     public Contactos(Integer id, String pais, String nombre, String telefono, String nota, Blob imagen) {
         this.id = id;
         this.pais = pais;

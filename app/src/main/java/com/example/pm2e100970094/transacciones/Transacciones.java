@@ -5,9 +5,16 @@ public class Transacciones {
     //Tabla de la base de datos
     public static final String tablacontactos = "contactos";
 
+    public static final String id = "id";
+    public static final String nombre = "nombre";
+    public static final String telefono = "telefono";
+    public static final String nota = "nota";
+    public static final String imagen = "imagen";
+    public static final String pais = "pais";
+
     //Transacciones de la base de datos EX01DB
     public static final String CreateTBContactos=
-            "CREATE TABLE contactos (id INTEGER PRIMARY KEY AUTOINCREMENT, pais TEXT, "+"nombre TEXT, telefono TETX, nota TEXT, imagen BLOB)";
+            "CREATE TABLE contactos (id INTEGER PRIMARY KEY AUTOINCREMENT, pais TEXT, "+"nombre TEXT, telefono INTEGER, nota TEXT, imagen BLOB)";
 
     public static final  String DropTableContactos= "DROP TABLE IF EXISTS personas";
 
