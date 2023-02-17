@@ -101,11 +101,12 @@
         android:layout_marginEnd="15dp"
         android:background="#FAFBFB"
         android:backgroundTint="#FAFBFB"
+        android:foregroundTint="#040404"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -118,7 +119,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="209dp"
         android:layout_height="186dp"
         android:layout_marginTop="16dp"
@@ -129,7 +130,7 @@
         app:srcCompat="@drawable/acceso" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/takepicture"
         android:layout_width="102dp"
         android:layout_height="84dp"
         android:layout_marginTop="60dp"
@@ -137,7 +138,7 @@
         app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.527"
         app:srcCompat="@drawable/mas" />
@@ -156,7 +157,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.44" />
 
 
