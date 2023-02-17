@@ -6,14 +6,15 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
-
-    <uses-feature android:name="android.hardware.camera2"
+    <uses-feature
+        android:name="android.hardware.camera2"
         android:required="true" />
 
     <queries>
+
         <!-- Browser -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -32,12 +33,6 @@
         </intent>
     </queries>
 
-
-
-
-
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -47,6 +42,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PM2E100970094"
         tools:targetApi="31">
+        <activity
+            android:name=".ActivityListView"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -66,11 +64,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
-
-
-
-
     </application>
 
 </manifest>

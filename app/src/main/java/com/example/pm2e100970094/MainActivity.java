@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Spinner spninner;
+    Button btnver;
 
     static final  int REQUEST_IMAGE = 101;
     static final  int PETICION_ACCESS_CAM = 201;
@@ -62,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
                 permisos();
             }
         });
+
+        btnver =(Button) findViewById(R.id.btnvercontactos);
+        btnver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ActivityListView.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
