@@ -101,7 +101,7 @@
         android:layout_marginEnd="15dp"
         android:background="#FAFBFB"
         android:backgroundTint="#FAFBFB"
-        android:foregroundTint="#040404"
+        android:foregroundTint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.681"
