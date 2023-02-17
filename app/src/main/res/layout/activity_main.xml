@@ -171,8 +171,9 @@
         android:maxLines="10"
         android:minLines="6"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/txtnotas"
-        tools:layout_editor_absoluteX="41dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtnotas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
