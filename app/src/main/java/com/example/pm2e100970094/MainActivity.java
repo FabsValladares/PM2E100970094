@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -46,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
     static final  int REQUEST_IMAGE = 101;
     static final  int PETICION_ACCESS_CAM = 201;
 
-    static final int PETICION_ACCESO_CAM = 100;
-    static final int TAKE_PIC_REQUEST = 101;
+
 
     ImageView imageView;
     ImageButton btntakefoto;
@@ -106,15 +106,15 @@ public class MainActivity extends AppCompatActivity {
         }else if (nota.getText().toString().equals("")){
             Toast.makeText(getApplicationContext(), "Debe de escribir una nota" ,Toast.LENGTH_LONG).show();
         }else {
-             salvarContacto();
+             salvarContacto(imagen);
          }
     }
-    private void salvarContacto() {
+    private void salvarContacto(Bitmap bitmap) {
 try {
-        SQLiteConexion conexion = new SQLiteConexion(this, Transacciones.NameDatabase, null, 1);
-        SQLiteDatabase db = conexion.getWritableDatabase();
+         conexion = new SQLiteConexion(this, Transacciones.NameDatabase, null, 1);
+         db = conexion.getWritableDatabase();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-       // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] ArrayImagen  = stream.toByteArray();
 
         ContentValues valores = new ContentValues();
@@ -127,7 +127,7 @@ try {
         valores.put(Transacciones.nombre, nombre.getText().toString());
         valores.put(Transacciones.telefono, PaisNumber + telefono.getText().toString());
         valores.put(Transacciones.nota, nota.getText().toString());
-        //valores.put(String.valueOf(Transacciones.imagen),ArrayImagen);
+        valores.put(String.valueOf(Transacciones.imagen),ArrayImagen);
 
 
 
@@ -149,16 +149,6 @@ try {
         telefono.setText("");
         nota.setText("");;
     }
-
-
-
-
-
-
-
-
-
-
 
     private void permisos()
     {
@@ -198,12 +188,10 @@ try {
 
         if(requestCode == REQUEST_IMAGE)
         {
-            //Bundle extra = data.getExtras();
-            //Bitmap imagen = (Bitmap) extra.get("data");
-            //imageView.setImageBitmap(imagen);
 
             try {
                 File foto = new File(currentPhotoPath);
+                imagen = BitmapFactory.decodeFile(foto.getAbsolutePath());
                 imageView.setImageURI(Uri.fromFile(foto));
             }
             catch (Exception ex)

@@ -19,7 +19,7 @@ public class Contactos {
         this.imagen = imagen;
     }
 
-    public Integer getId() {
+    public  Integer getId() {
         return id;
     }
 

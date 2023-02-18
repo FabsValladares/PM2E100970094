@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C6EBFE"
+    android:backgroundTint="#C6EBFE"
+    tools:context=".ActivityActualizarContactos">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/btn_Atras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9580BD"
+            android:onClick="irMainActivity"
+            android:text="Atrás" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:foregroundTint="#000000"
+            android:gravity="center"
+            android:text="Actualización de Contactos."
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelnombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center_horizontal|left"
+            android:text="Nombre:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F4F4"
+            android:backgroundTint="#F8F4F4"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:hint="Ingrese su Nombre"
+            android:inputType="textPersonName"
+            android:textStyle="normal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelnumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numero:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/numero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F4F4"
+            android:backgroundTint="#F8F4F4"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:hint="Ingrese su Numero Celular."
+            android:inputType="number"
+            android:textStyle="normal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nota:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/notas"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#F8F4F4"
+            android:backgroundTint="#F8F4F4"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Ingrese una Nota."
+            android:inputType="textMultiLine"
+            android:textStyle="normal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9580BD"
+            android:fontFamily="sans-serif-medium"
+            android:text="Actualizar"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

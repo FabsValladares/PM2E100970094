@@ -16,7 +16,7 @@ public class Transacciones {
     public static final String CreateTBContactos=
             "CREATE TABLE contactos (id INTEGER PRIMARY KEY AUTOINCREMENT, pais TEXT, "+"nombre TEXT, telefono INTEGER, nota TEXT, imagen BLOB)";
 
-    public static final  String DropTableContactos= "DROP TABLE IF EXISTS personas";
+    public static final  String DropTableContactos= "DROP TABLE IF EXISTS contactos";
 
     //Helpers
     public static final  String Empty= "";

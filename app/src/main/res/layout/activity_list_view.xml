@@ -40,52 +40,58 @@
         android:layout_marginStart="10dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="#9580BD"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Compartir Contacto"
-        android:textSize="11sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlista" />
 
     <Button
-        android:id="@+id/btn_img"
+        android:id="@+id/btn_ver"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="#9580BD"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Ver Imagen"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_compartir" />
+        app:layout_constraintStart_toEndOf="@+id/btn_compartir"
+        app:layout_constraintTop_toBottomOf="@+id/txtlista" />
 
     <Button
         android:id="@+id/btn_eliminar"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#9580BD"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Eliminar Contacto"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_llamar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_compartir"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_llamar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="#9580BD"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="LLamar Contacto"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -93,16 +99,16 @@
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
         android:backgroundTint="#9580BD"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Actualizar Contacto"
         android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_llamar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_eliminar"
-        app:layout_constraintTop_toBottomOf="@+id/btn_img"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ver"
+        app:layout_constraintVertical_bias="0.473" />
 
     <EditText
         android:id="@+id/txtbuscar"
@@ -114,6 +120,7 @@
         android:ems="10"
         android:hint="Buscar"
         android:inputType="textPersonName"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtlista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
